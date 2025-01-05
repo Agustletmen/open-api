@@ -1,0 +1,42 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8888
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/new_novel
+    username: root
+    password: 123
+    type: com.zaxxer.hikari.HikariDataSource
+
+# 支付宝沙箱支付
+alipay:
+  #请填写您的AppId，例如：2019091767145019
+  app-id: 9021000131676272
+  #请填写您的应用私钥，例如：MIIEvQIBADANB
+  merchant-private-key: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDeCb9tvfARMCihtPQAFveRvAKZRzkFypJ+KDjHSkk+q3Z5K1IvEGrW4+hHQnE30lsPHDc5belV93+dAPhtadeJ+qCSkbVZXmy+jXeU1Pf38EN2ffqsUgr6pgkBuwbnLfYko4bbDTvtZx5tWyqH7wyANbW6JqEa5K71jpTaLSxp9n45CrUAfGZpXW18Iq2Ex4l5y7tfOJexcS3UNP4EdRipuuOM1GPmkGN8XcbfS7qI9O6s26vE41QAS6PT3OfQmLxsGtNTclnEgDlEPwRP/jFErbfEi4OMmjYtQu4pUS/ap5qYc0jqoXe8ZQwS0KEHbTJKugGLExXEe8zL4jAZqezzAgMBAAECggEANfXaftoVGKhCh6IJVmg+fD1byFJlykGDvoMZ4VztVfyniyT7ERMFU/oJPiAoka9ej9qElUFf3pOKgOZ2eWiqiA7PrS8aCoEHHnwU3qevJ6NNUeOl4vEBWA63y6LfN5mU4yyWnm+l67kOzPbF7EktGY9z/axbpMSEvIqNJESsMYfRGVRNoVB14uhmrqeVvHGbjspJa0mDD+Mk6huCguytw3x+BxH6J04pcX1GHiWuRb+WVJXy76RU/u6l248AlrJ7VlwdtrfXZe48xBlzq1ipkc7ow8DowrxY7Oj3zW15EQNP1BXBBuxHD7F4GL3dvdANW7Uw/1/xZ4R36X5j9z4VAQKBgQDyTJbkKj/SSMaz13eRo6/OyO+Oj1jgUqIQi2wRPNUhCBJbmZNmTntd1kBx7w8C25Y+36Q9smV5l5MLZGGz1PBlM6+5xP9aPspMyg6ythtJdZLYd7lk1bTNJ9WxIRGJKH0MABbhMsiCaZuu0fgtw2oTVZEe8mXPUd+4O9VZSCEEcwKBgQDql944ziqW3rMVym+6TC8NOJX2npw3/7MmZNN1hlT5YX1NNY5pib1Yl8geBnAMiZvkiRPBPgOOlj8Zud7zqZHm2q/9LHDwWk1rd6EsYOarAxgx4+pVj/b73PCP6oIv02p3lnyx1mXjuTq/uzJCogdH+wy+1xcvmZ8o1O+DlKHVgQKBgQDFky53XvwrvKxKeahGWfNB6xdsZ/dQ9BCy7P1yEOi5xpsxlklbYyO1oL9sKENVUTlyi2qh5JZaT/7Xi0MgIMLlwv/Hu5t9OzY654iUsWoOvJDBct76GkkUASd/CDgEX7+XyXrep0pZDUSliRGWP4J/wYZUddQO+fQzhpax9t71gQKBgQCU3Of73f+ymwDDPCFn834MArNOutlgw5Z4L5Trx+FWGmH7w5dqKyiG9lHbk7Q4kH3nKIDrqCFzsq258nOi5SCbgHwayL+mFXd5UYFp+teE/0K0Le9+egt9SXcxq9sO5DZ0Sn84Dle7iMfZ8Lz1AYJjT9CHrU+eOfqAW5bdRUzogQKBgQDps5/xKfMkHlE/bCj7BzFzkEcnpGMKGDQ4966clwZh/qoY0c3/RFh22wD6a+s+LE21qTy+JEcfl8GS8uWDo4c8sNpVGE4jz7zI7Iz4WevpvoZC7lalHe6GuUMaaTGIOPBZ4DHRzeDkhJa7a+Nog7y3evqziSTSTDIwkA1dNWX7VA==
+  #支付宝公钥字符串
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArgw4ZUpaKa2Th4uNlNmswx8AJD6owx/jD4YT1j42FWOEC3WmAsISh2b+YWjOjU23CqiUwEaaTfSh/ha1OCz9mrMZCbdxl0/55Kti1JwhUszml1BDydwTUsiErm3ln7YmXVcu96HPgvoVXkNGtxSpjUYp/jWxY32+cRLrJkNoJbqN0ApzmuEpYAXYWKCTRfzUZAkXBkRGJqarSU4sqjUEFxcZ/egzA/GNdxLCngpy/buc15ID7aOELwQTGi/I3JR+spKkSpD9HSnaxstJYag8iaP2hVgBBc0MJsURR2gjVpV+pEBkdCAeIzy8um9fmw4RoTVVEDQACa4B0zfHqloKfwIDAQAB
+  #填写您的支付类接口异步通知接收服务地址，例如：https://www:test:com/callback:
+  notify-url: http://ne77kr.natappfree.cc/alipay/notify # 需要有外网地址
+  #支付成功跳转页面 return-url: http://127.0.0.1:8888/user/userinfo.html
+  return-url: http://www.baidu.com
+  #支付宝网关 gateway-url: https://openapi.alipay.com/gateway.do
+  gateway-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+
+  #  #签名方式
+  #  sign-type: RSA2
+  #  #编码
+  #  charset: utf-8
+  #  #返回格式
+  #  format: json
+
+  # # 应用公钥证书 (证书模式必须)
+  # appCertPath:
+
+  # # 支付宝公钥证书 (证书模式必须)
+  # aliPayCertPath:
+
+  # # 支付宝根证书 (证书模式必须)
+  # aliPayRootCertPath:
